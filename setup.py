@@ -19,6 +19,7 @@ setup(
     install_requires=[
         'Scrapy>=1.0.0',
         'scrapy-hcf',
+        'scrapy-magicfields',
         'scrapy-querycleaner',
         'scrapy-splitvariants',
     ]
