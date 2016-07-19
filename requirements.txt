@@ -4,3 +4,6 @@ hubstorage>=0.23
 python-dateutil
 scrapinghub
 Scrapy>=1.1
+
+# import new scrapy plugins
+scrapy-splitvariants
