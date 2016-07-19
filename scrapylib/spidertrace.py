@@ -11,11 +11,14 @@ from gzip import GzipFile
 import time
 import boto
 import json
+import logging
 from boto.s3.key import Key
-from scrapy import signals, log
+from scrapy import signals
 from scrapy.exceptions import NotConfigured
 from scrapy.http import Request
 from scrapy.utils.request import request_fingerprint
+
+logger = logging.getLogger(__name__)
 
 
 class SpiderTraceMiddleware(object):
@@ -75,6 +78,6 @@ class SpiderTraceMiddleware(object):
         c = boto.connect_s3()
         fname = basename(f.name)
         key = Key(c.get_bucket(self.bucket), fname)
-        log.msg("uploading trace to s3://%s/%s" % (key.bucket.name, fname))
+        logger.info("uploading trace to s3://%s/%s" % (key.bucket.name, fname))
         key.set_contents_from_filename(f.name)
         os.remove(f.name)

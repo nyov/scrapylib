@@ -1,13 +1,16 @@
+import logging
 from dateutil.parser import parse
 from scrapy.loader.processors import Compose
-from scrapy import log
 from scrapylib.processors import default_output_processor
+
+logger = logging.getLogger(__name__)
+
 
 def parse_datetime(value):
     try:
         d = parse(value)
     except ValueError:
-        log.msg('Unable to parse %s' % value, level=log.WARNING)
+        logger.warning('Unable to parse %s' % value)
         return value
     else:
         return d.isoformat()
@@ -16,7 +19,7 @@ def parse_date(value):
     try:
         d = parse(value)
     except ValueError:
-        log.msg('Unable to parse %s' % value, level=log.WARNING)
+        logger.warning('Unable to parse %s' % value)
         return value
     else:
         return d.strftime("%Y-%m-%d")
