@@ -16,6 +16,6 @@ setup(
         'Programming Language :: Python'
     ],
     install_requires=[
-        'Scrapy>=1.0.0',
+        'Scrapy>=1.1.0',
     ]
 )

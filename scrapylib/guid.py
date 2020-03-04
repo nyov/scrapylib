@@ -2,10 +2,7 @@ import hashlib
 
 from scrapy import signals
 from scrapy.exceptions import DropItem
-try:
-    from scrapy.utils.python import to_bytes
-except ImportError:
-    from scrapy.utils.python import unicode_to_str as to_bytes
+from scrapy.utils.python import to_bytes
 
 
 def hash_values(*values):
