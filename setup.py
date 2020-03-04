@@ -6,8 +6,7 @@ setup(
     license='BSD',
     description='Scrapy helper functions and processors',
     author='Scrapinghub',
-    author_email='info@scrapinghub.com',
-    url='http://github.com/scrapinghub/scrapylib',
+    url='http://github.com/nyov/scrapylib',
     packages=['scrapylib', 'scrapylib.constraints', 'scrapylib.processors'],
     platforms=['Any'],
     classifiers=[
@@ -18,11 +17,5 @@ setup(
     ],
     install_requires=[
         'Scrapy>=1.0.0',
-        'scrapy-crawlera',
-        'scrapy-deltafetch',
-        'scrapy-hcf',
-        'scrapy-magicfields',
-        'scrapy-querycleaner',
-        'scrapy-splitvariants',
     ]
 )

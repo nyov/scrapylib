@@ -1,5 +1,5 @@
 """
-Spider Trace 
+Spider Trace
 
 This SpiderMiddleware logs a trace of requests and items extracted for a
 spider

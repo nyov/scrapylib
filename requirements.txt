@@ -1,14 +1,4 @@
 six
 boto
-hubstorage>=0.23
 python-dateutil
-scrapinghub
 Scrapy>=1.1
-
-# import new scrapy plugins
-scrapy-crawlera
-scrapy-deltafetch
-scrapy-hcf
-scrapy-magicfields
-scrapy-querycleaner
-scrapy-splitvariants
