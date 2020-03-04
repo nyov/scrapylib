@@ -30,7 +30,6 @@ And define the constraints attribute in your item:
 
 import re
 from functools import partial
-from six import string_types, text_type
 
 
 class RequiredFields(object):
@@ -72,8 +71,8 @@ class IsType(object):
                 assert isinstance(v, self.type), "field %r is not a %s: %r" % \
                     (f, self.type.__name__, v)
 
-IsString = partial(IsType, string_types)
-IsUnicode = partial(IsType, text_type)
+IsString = partial(IsType, str)
+IsUnicode = partial(IsType, str)
 IsList = partial(IsType, list)
 IsDict = partial(IsType, dict)
 
@@ -88,7 +87,7 @@ class IsNumber(object):
             v = item.get(f)
             if v is None:
                 continue
-            assert isinstance(v, string_types), "field %r is not a string: %r" % (f, v)
+            assert isinstance(v, str), "field %r is not a string: %r" % (f, v)
             assert v.strip().isdigit(), "field %r contains non-numeric chars: %r" % (f, v)
 
 class IsPrice(object):
@@ -102,7 +101,7 @@ class IsPrice(object):
         for f in self.fields:
             v = item.get(f)
             if v:
-                assert isinstance(v, string_types), "field %r is not a string: %r" % (f, v)
+                assert isinstance(v, str), "field %r is not a string: %r" % (f, v)
                 assert self.price_re.search(v), "field %r is not a price: %r" % (f, v)
 
 class MaxLen(object):

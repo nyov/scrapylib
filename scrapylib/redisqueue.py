@@ -1,7 +1,4 @@
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
+import pickle
 
 from scrapy.exceptions import NotConfigured
 from scrapy import signals

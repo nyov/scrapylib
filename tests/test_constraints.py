@@ -1,5 +1,4 @@
 import unittest
-import six
 
 from scrapylib.constraints import RequiredFields, NonEmptyFields, IsType, IsNumber, IsPrice, MaxLen, MinLen
 
@@ -38,13 +37,12 @@ class IsTypeTest(unittest.TestCase):
         self.item = {'str': 'bar', 'list': ['one']}
 
     def test_ok(self):
-        IsType(six.string_types, 'str')(self.item)
+        IsType(str, 'str')(self.item)
         IsType(list, 'list')(self.item)
         IsType(list, 'missing')(self.item)
 
     def test_fail(self):
-        for t in six.string_types:
-            self.assertRaises(AssertionError, IsType(t, 'list'), self.item)
+        self.assertRaises(AssertionError, IsType(str, 'list'), self.item)
         self.assertRaises(AssertionError, IsType(list, 'str'), self.item)
 
 

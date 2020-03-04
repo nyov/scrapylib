@@ -2,12 +2,11 @@ import datetime
 import locale as localelib
 import re
 import time
-from six.moves.urllib.parse import urljoin
+from urllib.parse import urljoin
 
 
 from scrapy.loader.processors import MapCompose, TakeFirst
-from scrapy.utils.markup import (remove_tags, replace_escape_chars,
-                                 unquote_markup)
+from w3lib.html import (remove_tags, replace_escape_chars, unquote_markup)
 
 
 _clean_spaces_re = re.compile("\s+", re.U)

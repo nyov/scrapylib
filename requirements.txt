@@ -1,4 +1,3 @@
-six
 boto
 python-dateutil
 Scrapy>=1.1
