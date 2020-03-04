@@ -1,28 +1,13 @@
 language: python
-python: 3.5
+python: 3.7
 sudo: false
 env:
   matrix:
-  - TOXENV=py27
-  - TOXENV=py33
   - TOXENV=py35
 addons:
   apt:
     packages:
-      - language-pack-fr
       - libdb-dev
 
 install: pip install -U tox
 script: tox
-
-deploy:
-  provider: pypi
-  user: scrapinghub
-  distributions: sdist bdist_wheel
-  password:
-    secure: iKVlMlKSr+LOuCCMMOqL65aYjNRy3k1Zb4d7NRN0JpWS5DGau8G8cEhJ1dY4uyc/DNKVJmd939OiLBsUqqCmz09+ozen/YrRNjEZS5lOwBNfhpiCESkbOjcInV1PQgx2XfuHGp8O/9vxtXjjH9WE9CabQ+8Zg5/rMMvXizT4/O4=
-  on:
-    tags: true
-    all_branches: true
-    repo: scrapinghub/scrapylib
-    condition: $TOXENV = py27
