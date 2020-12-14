@@ -27,7 +27,7 @@ Some of its components were moved to their own package:
 
 Remaining code in this repo:
 
-- Processors: Some additional scrapy.loader.processors
+- Processors: Some additional `itemloaders`_.processors
 
 - ConstraintsPipeline
 
@@ -47,3 +47,4 @@ Remaining code in this repo:
 .. _scrapy-magicfields: https://github.com/scrapy-plugins/scrapy-magicfields
 .. _scrapy-querycleaner: https://github.com/scrapy-plugins/scrapy-querycleaner
 .. _scrapy-splitvariants: https://github.com/scrapy-plugins/scrapy-splitvariants
+.. _itemloaders: https://github.com/scrapy/itemloaders

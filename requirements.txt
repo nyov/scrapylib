@@ -1,3 +1,4 @@
 boto
 python-dateutil
 Scrapy>=1.1
+itemloaders>=1.0.1

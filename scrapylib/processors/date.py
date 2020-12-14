@@ -1,6 +1,6 @@
 import logging
 from dateutil.parser import parse
-from scrapy.loader.processors import Compose
+from itemloaders.processors import Compose
 from scrapylib.processors import default_output_processor
 
 logger = logging.getLogger(__name__)

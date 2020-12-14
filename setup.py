@@ -13,7 +13,7 @@ setup(
         'Development Status :: 7 - Inactive',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python'
+        'Programming Language :: Python :: 3',
     ],
     install_requires=[
         'Scrapy>=1.1.0',
